@@ -1,7 +1,13 @@
 import streamlit as st
 import requests
 import json
-import plotly.graph_objects as go
+import subprocess
+import sys
+try:
+    import plotly.graph_objects as go
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+    import plotly.graph_objects as go
 import pandas as pd
 import logging
 import random
